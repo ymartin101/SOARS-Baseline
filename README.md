@@ -62,7 +62,7 @@ Please note that this copyright only covers the source code, program binaries an
 
 SOARS - Space Object and Astrodynamics Radar Simulator
 
-Copyright (C) 2022 Yaaseen Martin
+Copyright (C) 2023 Yaaseen Martin
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of version 3 of the GNU General Public License as
