@@ -1,8 +1,8 @@
-# SOARS - Space Object and Astrodynamics Radar Simulator
+# SOARS - Space Object and Astrodynamics Radar Simulator (Baseline version)
 
 ---
 
-SOARS is a ray-traced radar simulator for simulating the performance and output of a variety of radar systems. It is based on the design of the Flexible Extensible Radar Simulator (FERS) as well as the Ray Tracing Simulator (RTS), and could be used to generate useful results for real-world projects involving space-oriented systems.
+SOARS is a radar simulator for simulating the performance and output of a variety of radar systems. It is based on the design of the Flexible Extensible Radar Simulator (FERS) and could be used to generate useful results for real-world projects involving space-oriented systems. Note that this version of the software does not include ray tracing.
 
 #### AUTHORS
 
@@ -10,7 +10,6 @@ SOARS was namely developed by:
 
 * Yaaseen Martin
 * Marc Brooker (original FERS design)
-* Kathryn Williams (original RTS design)
 
 #### BUILDING SOARS
 
@@ -22,14 +21,13 @@ SOARS depends on a number of external libraries that you need to install before 
 * PugiXML
 * CMake
 
-Additionally, SOARS requires the installation of a C++ compiler, NVIDIA CUDA, and Python. NVIDIA OptiX will also be required for the ray-tracing implementation, and the steps below will explain how to get this working.
+Additionally, SOARS requires the installation of a C++ compiler, NVIDIA CUDA, and Python.
 
 The following steps will enable you to install SOARS:
 
-* Download and extract the OptiX 5.1.1. software (linked here), then extract it to a folder "ROOT" (rename as desired)
-* Download the SOARS repository and copy all its files into the ROOT/SDK/ directory; overwrite any conflicting files
-* Change directory to ROOT/SDK/ and create a "build" folder, then change directory into it
-* Inside ROOT/SDK/build, run "cmake3 .." (or just "cmake ..", depending on your installation)
+* Download the SOARS repository and extract all its files into a "ROOT" directory
+* Change directory to ROOT and create a "build" folder, then change directory into it
+* Inside ROOT/build, run "cmake3 .." (or just "cmake ..", depending on your installation)
 * Run "make" to build the completed binary
 * Place your input file (.soarsxml) into the "build" directory and then run it SOARS using "./soars INPUT.soarsxml".
 
@@ -39,7 +37,7 @@ Note that SOARS was only tested on a compute node running CentOS 7 with a NVIDIA
 
 SOARS takes an XML description of a scene, with one or more transmitters, one or more receivers, and zero or more targets. Using the parameters (such as sample rate, carrier frequency, etc.) defined in the XML script, SOARS generates the waveform that the receivers will observe after passing through an ADC.
 
-SOARS works with an arbitrary number of receivers and transmitters (monostatic and multistatic) for pulsed radar systems using various pulse shapes. The simulator currently simulates the amplitude, phase, Doppler and noise effects of a radar system. Simulation of ray-traced effects (such as multiscatter, refraction, etc) is also supported through NVIDIA OptiX.
+SOARS works with an arbitrary number of receivers and transmitters (monostatic and multistatic) for pulsed radar systems using various pulse shapes. The simulator currently simulates the amplitude, phase, Doppler and noise effects of a radar system.
 
 In terms of inputs, SOARS requires a single XML file (with the extension ".soarsxml") that describes the entire simulation. It then outputs:
 
@@ -54,7 +52,7 @@ Note that:
 
 #### THANKS
 
-The authors of PugiXML, FFTW3, CMake, HDF5, FERS, RTS, SGP4, OptiX, CUDA, and Boost.
+The authors of PugiXML, FFTW3, CMake, HDF5, FERS, SGP4, CUDA, and Boost.
 
 #### COPYRIGHT NOTICE
 
